@@ -3,9 +3,6 @@ from time import sleep
 from requests.exceptions import HTTPError
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 
-
-
-
 firebaseConfig = {
   'apiKey': "AIzaSyDFWPmnk4vcSPUO9X3wT62zWljIRWzhsSE",
   'authDomain': "side-project-404814.firebaseapp.com",
