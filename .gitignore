@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+app-2.py
+app-3.py
+auth_product.py
+auth.py
+database.json
+database.txt
+migration.json
+migration.py
+side-project-404814-default-rtdb-export-1.json
+side-project-404814-default-rtdb-export.json
