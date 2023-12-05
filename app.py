@@ -2,7 +2,6 @@ import pyrebase, json, datetime, os, random
 from time import sleep
 from requests.exceptions import HTTPError
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
-from firebase_admin import credentials, initialize_app, firestore
 
 
 
