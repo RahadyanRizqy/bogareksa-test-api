@@ -2,16 +2,19 @@ import pyrebase, json, datetime, os, random
 from time import sleep
 from requests.exceptions import HTTPError
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
 
 firebaseConfig = {
-  'apiKey': "AIzaSyDFWPmnk4vcSPUO9X3wT62zWljIRWzhsSE",
-  'authDomain': "side-project-404814.firebaseapp.com",
-  'projectId': "side-project-404814",
-  'storageBucket': "side-project-404814.appspot.com",
-  'messagingSenderId': "131412246169",
-  'appId': "1:131412246169:web:944456b0eb31fd5c864208",
-  'measurementId': "G-SZ1NVJC5FP",
-  'databaseURL': 'https://side-project-404814-default-rtdb.firebaseio.com',
+  'apiKey': os.getenv("API_KEY"),
+  'authDomain': os.getenv("AUTH_DOMAIN"),
+  'projectId': os.getenv("PROJECT_ID"),
+  'storageBucket': os.getenv("STORAGE_BUCKET"),
+  'messagingSenderId': os.getenv("MESSAGE_SENDER_ID"),
+  'appId': os.getenv("APP_ID"),
+  'measurementId': os.getenv("MEASUREMENT_ID"),
+  'databaseURL': os.getenv("DB_URL"),
 };
 
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -171,4 +174,4 @@ def auth_status():
 #         return db.child('images').child(imageId).child("filePath").set(filePath)
     
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=80)
+    app.run(debug=True, host=os.getenv("HOST"), port=os.getenv("PORT"))
